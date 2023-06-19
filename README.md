@@ -10,7 +10,10 @@ This repository houses our CSEGG benchmark implementation, encompassing source c
 
 ## Project Description 
 
-The project focuses on scene graph generation (SGG), which involves analyzing images to extract valuable information about objects and their relationships. In the dynamic visual world, it becomes crucial for AI systems to detect new objects and establish their relationships with existing objects. However, the field of SGG lacks continual learning methodologies. To address this gap, we introduce the comprehensive Continual ScenE Graph Generation (CSEGG) dataset, which includes three learning scenarios and six evaluation metrics. Our research aims to investigate the performance of existing SGG methods in continual learning, specifically regarding the retention of previous object entities and relationships while learning new ones. Furthermore, we explore how continual object detection enhances generalization in classifying known relationships on unknown objects. Some visualization examples from all the scenarios are shown below.
+The project focuses on scene graph generation (SGG), which involves analyzing images to extract valuable information about objects and their relationships. In the dynamic visual world, it becomes crucial for AI systems to detect new objects and establish their relationships with existing objects. However, the field of SGG lacks continual learning methodologies. To address this gap, we introduce the comprehensive Continual ScenE Graph Generation (CSEGG) dataset, which includes three learning scenarios and six evaluation metrics. Our research aims to investigate the performance of existing SGG methods in continual learning, specifically regarding the retention of previous object entities and relationships while learning new ones. Furthermore, we explore how continual object detection enhances generalization in classifying known relationships on unknown objects. 
+
+<!--
+Some visualization examples from all the scenarios are shown below.
 
 | [![Visualization examples for Learning Scenario 1](samples/viz_S1.png)](samples/viz_S1.png) | 
 |:---:|
@@ -22,7 +25,7 @@ The project focuses on scene graph generation (SGG), which involves analyzing im
 
 | [![Visualization examples for Learning Scenario 3](samples/viz_S3.png)](samples/viz_S3.png) | 
 |:---:|
-| Visualization examples for Learning Scenario 3. |
+| Visualization examples for Learning Scenario 3. | -->
 
 ## Dataset
 
