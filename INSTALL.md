@@ -1,5 +1,17 @@
 # Install Packages
 
+The code has been successfully tested in Ubuntu 20.04 with four GPUs (NVIDIA RTX A5000). It requires the following:
+- PyTorch = 1.10.1 
+- python = 3.8.13
+- CUDA = 11.3
+- torchvision = 0.11.2
+- torchaudio = 0.10.1
+- cocoapi
+- yacs
+- matplotlib
+- GCC >= 4.9
+- OpenCV
+
 ## Conda Environments
 
 ``` bash
