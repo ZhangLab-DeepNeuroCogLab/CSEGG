@@ -14,11 +14,15 @@ The code has been successfully tested in Ubuntu 20.04 with four GPUs (NVIDIA RTX
 
 ## Conda Environments
 
-``` bash
-# first, make sure that your conda is setup properly with the right environment
-# for that, check that `which conda`, `which pip` and `which python` points to the
-# right path. From a clean conda env, this is what you need to do
+Refer to [link](https://docs.anaconda.com/free/anaconda/install/index.html) for Anaconda installation. Alternatively, execute the following command:
 
+```bash 
+#setting up conda
+curl -O https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
+bash Anaconda3-2023.03-1-Linux-x86_64.sh
+```
+
+``` 
 conda create --name sggc --file spec_file.txt
 ```
 
