@@ -26,7 +26,9 @@ The project focuses on scene graph generation (SGG), which involves analyzing im
   <em>Visualization examples for Learning Scenario 3.</em>
 </p>
 
+## Dataset
 
+Check [DATASET.md](DATASET.md) for instructions of dataset preprocessing.
 
 
 
