@@ -11,7 +11,7 @@ You can download the images and notations directly by following steps.
 
 2. Download the [scene graphs annotations](https://shanghaitecheducn-my.sharepoint.com/:u:/g/personal/lirj2_shanghaitech_edu_cn/EfI9vkdunDpCqp8ooxoHhloBE6KDuztZDWQM_Sbsw_1x5A?e=N8gWIS) and extract them to `path_to/vg/vg_motif_anno`.
 
-Here, `path_to` is where you extract the dataset. (Size of the Dataset ~ 27Gb, choose the directory which has enough space).
+   Here, `path_to` is where you extract the dataset. (Size of the Dataset ~ 27Gb, choose the directory which has enough space).
 
 3. Link the data folder to project folder using the following command:
 ```bash
