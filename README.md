@@ -30,6 +30,9 @@ The project focuses on scene graph generation (SGG), which involves analyzing im
 
 Check [DATASET.md](DATASET.md) for instructions of dataset preprocessing.
 
+## Installation
+Check [INSTALL.md](INSTALL.md) for installation instructions.
+
 
 
 
