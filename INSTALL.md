@@ -1,4 +1,6 @@
-## Install Packages
+# Installation Guide
+
+## Pre-requisite
 
 The code has been successfully tested in Ubuntu 20.04 with four GPUs (NVIDIA RTX A5000). It requires the following:
 - PyTorch = 1.10.1 
