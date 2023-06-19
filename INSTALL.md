@@ -1,5 +1,7 @@
 # Installation Guide
 
+To begin the installation, follow the following instructions.
+
 ## Pre-requisite
 
 The code has been successfully tested in Ubuntu 20.04 with four GPUs (NVIDIA RTX A5000). It requires the following:
@@ -13,8 +15,6 @@ The code has been successfully tested in Ubuntu 20.04 with four GPUs (NVIDIA RTX
 - matplotlib
 - GCC >= 4.9
 - OpenCV
-
-To begin the installation, follow the following instructions.
 
 Download our repository:
 
