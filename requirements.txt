@@ -27,3 +27,12 @@ gitpython
 graphviz
 tensorboardx 
 scikit-learn
+colorama 
+setuptools==59.5.0 
+ninja 
+yacs 
+cython 
+matplotlib 
+tqdm 
+opencv-python 
+overrides
