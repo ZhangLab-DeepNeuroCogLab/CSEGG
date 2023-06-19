@@ -42,6 +42,9 @@ Check [DATASET.md](DATASET.md) for instructions of dataset preprocessing.
 ## Installation
 Check [INSTALL.md](INSTALL.md) for installation instructions.
 
+## Acknowledgment
+This repository borrows code from scene graph benchmarking frameworks: [Scene Graph Benchmark](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch) developed by KaihuaTang, [PySGG](https://github.com/SHTUPLUS/PySGG) and [SGTR](https://github.com/Scarecrow0/SGTR/tree/main) developed by Rongjie Li.
+
 
 
 
