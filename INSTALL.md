@@ -21,11 +21,14 @@ Refer to [link](https://docs.anaconda.com/free/anaconda/install/index.html) for 
 curl -O https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
 bash Anaconda3-2023.03-1-Linux-x86_64.sh
 ```
-
+After Anaconda installation, create a new conda environment using the following command:
 ``` 
 conda create --name sggc --file spec_file.txt
 ```
-
+Activate the conda environment:
+```
+conda activate sggc
+```
 ## MISC packages
 ```
 pip install colorama setuptools==59.5.0 ninja yacs cython matplotlib tqdm opencv-python overrides
