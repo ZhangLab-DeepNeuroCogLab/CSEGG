@@ -15,3 +15,10 @@ You can download the annotation directly by following steps.
 ```
 ln -s /path-to-vg datasets/vg
 ```
+
+## Generate Training and Testing Data for each learning scenario 
+
+The following steps need to be followed for the data generation for each scenario. 
+
+1. 
+
