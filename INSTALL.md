@@ -12,9 +12,12 @@ The code has been successfully tested in Ubuntu 20.04 with four GPUs (NVIDIA RTX
 - GCC >= 4.9
 - OpenCV
 
+To begin the installation, follow the following instructions.
+
 Download our repository:
-```
-git clone 
+
+```bash
+git clone https://github.com/ZhangLab-DeepNeuroCogLab/CSEGG.git
 ```
 
 ## Conda Environments
