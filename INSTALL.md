@@ -16,12 +16,6 @@ The code has been successfully tested in Ubuntu 20.04 with four GPUs (NVIDIA RTX
 - GCC >= 4.9
 - OpenCV
 
-Download our repository:
-
-```bash
-git clone https://github.com/ZhangLab-DeepNeuroCogLab/CSEGG.git
-```
-
 ## Conda Environments
 
 Refer to [link](https://docs.anaconda.com/free/anaconda/install/index.html) for Anaconda installation. Alternatively, execute the following command:
@@ -40,6 +34,7 @@ Activate the conda environment:
 conda activate sggc
 ```
 ## MISC packages
+
 Install the miscellaneous (MISC) dependencies using the following commands:
 ```bash
 pip install colorama setuptools==59.5.0 ninja yacs cython matplotlib tqdm opencv-python overrides
@@ -47,8 +42,13 @@ conda install ipython
 conda install scipy
 conda install h5py
 ```
-
 ## Build Project
+Download our repository:
+
+```bash
+git clone https://github.com/ZhangLab-DeepNeuroCogLab/CSEGG.git
+```
+
 Build the project on your local system using the following command: 
 ```bash
 python setup.py build develop
