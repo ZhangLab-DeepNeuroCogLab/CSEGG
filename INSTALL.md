@@ -1,6 +1,13 @@
 # Installation Guide
 
-To begin the installation, follow the following instructions.
+To begin the installation, please follow the instructions below:
+
+Download our repository:
+
+```bash
+git clone https://github.com/ZhangLab-DeepNeuroCogLab/CSEGG.git
+cd CSEGG/
+```
 
 ## Pre-requisite
 
@@ -43,11 +50,6 @@ conda install scipy
 conda install h5py
 ```
 ## Build Project
-Download our repository:
-
-```bash
-git clone https://github.com/ZhangLab-DeepNeuroCogLab/CSEGG.git
-```
 
 Build the project on your local system using the following command: 
 ```bash
