@@ -44,10 +44,7 @@ conda activate sggc
 
 Install the miscellaneous (MISC) dependencies using the following commands:
 ```bash
-pip install colorama setuptools==59.5.0 ninja yacs cython matplotlib tqdm opencv-python overrides
-conda install ipython
-conda install scipy
-conda install h5py
+pip install -r requirements.txt
 ```
 ## Build Project
 
