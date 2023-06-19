@@ -1,6 +1,6 @@
 # Adaptive Visual Scene Understanding: Incremental Learning in Scene Graph Generation
 
-[![LICENSE](https://img.shields.io/badge/license-MIT-green)](https://github.com/Scarecrow0/SGTR/blob/master/LICENSE)
+[![LICENSE](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/)
 ![PyTorch](https://img.shields.io/badge/pytorch-1.10.0-%237732a8)
 
