@@ -12,6 +12,11 @@ The code has been successfully tested in Ubuntu 20.04 with four GPUs (NVIDIA RTX
 - GCC >= 4.9
 - OpenCV
 
+Download our repository:
+```
+git clone 
+```
+
 ## Conda Environments
 
 Refer to [link](https://docs.anaconda.com/free/anaconda/install/index.html) for Anaconda installation. Alternatively, execute the following command:
