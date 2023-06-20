@@ -44,6 +44,12 @@ Check [DATASET.md](DATASET.md) for instructions of dataset preprocessing.
 
 ## Training and Evaluation
 
+### Understanding Args 
+
+Training :- 
+
+
+
 ### Learning Scenario S1 
 
 There is only Stage 2 training for Learning Scenario S1. To train the model, run the following in the command window:
