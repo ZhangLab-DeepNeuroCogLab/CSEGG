@@ -42,9 +42,78 @@ Check [DATASET.md](DATASET.md) for instructions of dataset preprocessing.
 ## Installation
 Check [INSTALL.md](INSTALL.md) for installation instructions.
 
-## Training
+## Training and Evaluation
 
-### For Stage 1 Training 
+### Learning Scenario S1 
+
+There is only Stage 2 training for Learning Scenario S1. To train the model, run the following in the command window:
+
+```bash
+cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
+
+pods_train_S1 --num-gpus 4 --continual "random_replay"
+
+```
+To evaluate,
+
+```bash
+cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
+pods_test_S1 --num-gpus 1 
+
+```
+### Learning Scenario S2 
+
+To train the model, run the following in the command window:
+
+```bash
+#Stage 1
+cd ~/CSEGG/playground/sgg/detr.res101.c5.multiscale.150e.bs16
+
+pods_train_S2 --num-gpus 4 --continual "random_replay"
+```
+
+```bash
+#Stage 2
+cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
+
+pods_train_S2 --num-gpus 4 --continual "random_replay" --sgg "sgg"
+```
+
+To evaluate,
+
+```bash
+cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
+#Evaluation of Object Detection (Stage 1) and SGG (Stage 2) is combined
+pods_test_S2 --num-gpus 1 
+
+```
+
+### Learning Scenario S3 
+
+To train the model, run the following in the command window:
+
+```bash
+#Stage 1
+cd ~/CSEGG/playground/sgg/detr.res101.c5.multiscale.150e.bs16
+
+pods_train_S3 --num-gpus 4 --continual "random_replay"
+```
+
+```bash
+#Stage 2
+cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
+
+pods_train_S3 --num-gpus 4 --continual "random_replay" --sgg "sgg"
+```
+
+To evaluate,
+
+```bash
+#evaluation of R_bbox and R@k_relation_gen
+cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
+pods_test_S3 --num-gpus 1 
+
+```
 
 ## Acknowledgment
 This repository borrows code from scene graph benchmarking frameworks: [Scene Graph Benchmark](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch) developed by KaihuaTang, [PySGG](https://github.com/SHTUPLUS/PySGG) and [SGTR](https://github.com/Scarecrow0/SGTR/tree/main) developed by Rongjie Li.
