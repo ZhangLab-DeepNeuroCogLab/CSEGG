@@ -35,12 +35,12 @@ Some visualization examples from all the scenarios are shown below.
 |:---:|
 | Visualization examples for Learning Scenario 3. | -->
 
+## Installation
+Check [INSTALL.md](INSTALL.md) for installation instructions.
+
 ## Dataset
 
 Check [DATASET.md](DATASET.md) for instructions of dataset preprocessing.
-
-## Installation
-Check [INSTALL.md](INSTALL.md) for installation instructions.
 
 ## Training and Evaluation
 
