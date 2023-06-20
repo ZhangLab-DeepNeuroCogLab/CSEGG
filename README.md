@@ -46,9 +46,17 @@ Check [DATASET.md](DATASET.md) for instructions of dataset preprocessing.
 
 ### Understanding Args 
 
-Training :- 
+Training:
+- --num-gpus : Number of GPUs used for training. 
+- --start_task : To resume the training from certain task.
+- --sgg : To activate Stage 2 for Learning Scenario S2, S3. (This argument is not present in Learning Scenario S1).
+- --continual : To choose which CSEGG model to train.
+  - Learning Scenario S1 :- "replay_10", "ewc", "replay_100". To train "naive", exclude this argument from training command.
+  - Learning Scenario S2 :- "replay_10", "ewc", "replay_20". To train "naive", exclude this argument from training command.
+  - Learning Scenario S3 :- "replay_10". To train "naive", exclude this argument from training command.
 
-
+Evaluation:
+- --num-gpus : Number of GPUs used for testing.
 
 ### Learning Scenario S1 
 
@@ -56,7 +64,7 @@ There is only Stage 2 training for Learning Scenario S1. To train the model, run
 
 ```bash
 cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
-pods_train_S1 --num-gpus 4 --continual "random_replay"
+pods_train_S1 --num-gpus 4 --continual "replay_10"
 
 ```
 To evaluate,
@@ -73,13 +81,13 @@ To train the model, run the following in the command window:
 ```bash
 #Stage 1
 cd ~/CSEGG/playground/sgg/detr.res101.c5.multiscale.150e.bs16
-pods_train_S2 --num-gpus 4 --continual "random_replay"
+pods_train_S2 --num-gpus 4 --continual "replay_10"
 ```
 
 ```bash
 #Stage 2
 cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
-pods_train_S2 --num-gpus 4 --continual "random_replay" --sgg "sgg"
+pods_train_S2 --num-gpus 4 --continual "replay_10" --sgg "sgg"
 ```
 
 To evaluate,
@@ -98,13 +106,13 @@ To train the model, run the following in the command window:
 ```bash
 #Stage 1
 cd ~/CSEGG/playground/sgg/detr.res101.c5.multiscale.150e.bs16
-pods_train_S3 --num-gpus 4 --continual "random_replay"
+pods_train_S3 --num-gpus 4 --continual "replay_10"
 ```
 
 ```bash
 #Stage 2
 cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
-pods_train_S3 --num-gpus 4 --continual "random_replay" --sgg "sgg"
+pods_train_S3 --num-gpus 4 --continual "replay_10" --sgg "sgg"
 ```
 
 To evaluate,
