@@ -37,7 +37,7 @@ mkdir s1_data
 3. Create Learning Scenario S1 dataset using the following command:
 ```bash
 
-python data_generation_s1.py --file_path "datasets/vg/vg_motif_anno/"
+python data_generation_s1.py --file_path "vg/vg_motif_anno/"
 ```
 
 ### Learning Scenario S2 Dataset
@@ -56,7 +56,7 @@ mkdir s2_data
 3. Create Learning Scenario S2 dataset using the following command:
 ```bash
 
-python data_generation_s2.py --file_path "datasets/vg/vg_motif_anno/"
+python data_generation_s2.py --file_path "vg/vg_motif_anno/"
 ```
 
 ### Learning Scenario S3 Dataset
@@ -75,7 +75,7 @@ mkdir s3_data
 3. Create Learning Scenario S3 dataset using the following command:
 ```bash
 
-python data_generation_s3.py --file_path "datasets/vg/vg_motif_anno/"
+python data_generation_s3.py --file_path "vg/vg_motif_anno/"
 ```
 
 
