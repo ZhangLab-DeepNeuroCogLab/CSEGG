@@ -153,7 +153,7 @@ def main(args):
     test_weight_dir = config.MODEL.TEST_WEIGHTS
 
     cfg, logger = default_setup(config, args, test_weight_dir)
-    cfg.DATASETS.TEST = ("vgs_c2_task_1_test",)
+    cfg.DATASETS.TEST = ("vgs_s3_test",)
     valid_files = get_valid_files(args, cfg, logger)
 
 

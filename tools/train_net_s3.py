@@ -111,11 +111,9 @@ class AMPTrainerApply(AMPTrainer):
 
 def stage_main(args, cfg, build):
     
-    num_tasks = 5
+    num_tasks = 4
 
-    #task_list = ['outdoor_urban', 'outdoor_nature', 'sports_leisure', 'transportation', 'home_n_hotel', 'shopping_n_dining']
-
-    task_list = ['c2_task_1', 'c2_task_2', 'c2_task_3', 'c2_task_4', 'c2_task_5']
+    task_list = ['s3_task_1', 's3_task_2', 's3_task_3', 's3_task_4']
     
     if args.continual != False :
         continual_method = args.continual
@@ -140,7 +138,7 @@ def stage_main(args, cfg, build):
         if continual_method != "none" :
             path = f'{time_str}-{cfg.EXPERIMENT_NAME}{debug_flag}' +  "_" + continual_method + "_TASK_" + str(task_number)
         else :
-            path = f'{time_str}-{cfg.EXPERIMENT_NAME}{debug_flag}' +  "_TASK_" + task_list[i]
+            path = f'{time_str}-{cfg.EXPERIMENT_NAME}{debug_flag}' +  "_TASK_" + task_list[i] + str(task_number)
         
         cfg.OUTPUT_DIR = os.path.join(original_output_dir, path)
         
@@ -157,42 +155,46 @@ def stage_main(args, cfg, build):
         
         model_build_func = build
         
-        """
-        save the whole config file as a json
-        
-        """
-        
         if task_number == 1 :
             with open(os.path.join(cfg.OUTPUT_DIR, 'config.json'), 'w') as f:
                 f.write(json.dumps(cfg, indent=3))
             
-        """
-        If you'd like to do anything fancier than the standard training logic,
-        consider writing your own training loop or subclassing the trainer.
-        
-        """
+            #Fill the weights of the model post Stage 1 Training here
+            if args.sgg == "sgg" :
 
-        if args.continual != "joint":
-            cfg.DATASETS.TRAIN = ["",]
-            cfg.DATASETS.TEST = ["",]
-
-
-            cfg.DATASETS.TRAIN[0] = "vgs_" + task_list[i] + "_train"
-            cfg.DATASETS.TEST[0] = "vgs_" + task_list[i] + "_val"
-
-            if continual_method == "random_replay" and task_number > 1:
-                cfg.DATASETS.TRAIN.append("vgs_" + task_list[i-1] + "_train_exempler")
+                if args.continual == "replay_10" :
+                    if task_list[i] == "s3_task_1" :
+                        cfg.MODEL.WEIGHTS = ""
+                    elif task_list[i] == "s3_task_2" :
+                        cfg.MODEL.WEIGHTS = ""
+                    elif task_list[i] == "s3_task_3" :
+                        cfg.MODEL.WEIGHTS = ""
+                    elif task_list[i] == "s3_task_4" :
+                        cfg.MODEL.WEIGHTS = ""
+                else :
+                    if task_list[i] == "s3_task_1" :
+                        cfg.MODEL.WEIGHTS = ""
+                    elif task_list[i] == "s3_task_2" :
+                        cfg.MODEL.WEIGHTS = ""
+                    elif task_list[i] == "s3_task_4" :
+                        cfg.MODEL.WEIGHTS = ""
+                    elif task_list[i] == "s3_task_5" :
+                        cfg.MODEL.WEIGHTS = ""
             
-            if continual_method == "infinite_replay" and task_number > 1:
-                cfg.DATASETS.TRAIN.append("vgs_" + task_list[i-1] + "_train_inf_exempler")
+                print("USING SGG MODEL")
+        
+            
+        cfg.DATASETS.TRAIN = ["",]
+        cfg.DATASETS.TEST = ["",]
 
-        # cfg.DATASETS.TRAIN.append("vgs_c2_task_1_train_exempler")
 
-        # logger.info("Training on " + cfg.DATASETS.TRAIN)
+        cfg.DATASETS.TRAIN[0] = "vgs_" + task_list[i] + "_train"
+        cfg.DATASETS.TEST[0] = "vgs_" + task_list[i] + "_val"
+
+        if continual_method == "replay_10" and task_number > 1:
+            cfg.DATASETS.TRAIN.append("vgs_" + task_list[i-1] + "_train_exempler_10")
 
         print(cfg.DATASETS.TRAIN)
-
-        # continue ; 
         
         if cfg.TRAINER.FP16.ENABLED:
             logger.info('FP16 mixed percision On!')
@@ -200,28 +202,35 @@ def stage_main(args, cfg, build):
         else:
             trainer = Trainer(cfg, model_build_func, task_number, global_continual_object, continual_method)
             
-            
-        # enable when sgg present
-        # if task_number == 1 :
-        #     cfg.MODEL.WEIGHTS = "/home/naitik/projects/SGG_Continual/models/experiments/SGTR_short/playground/sgg/detr.res101.c5.one_stage_rel_tfmer/log/2022-11-29_15-35-(top1)VG-SGTR_short_replay-dec_layer6_TASK_1/model_final.pth"
-        # if task_number == 2 :
-        #     cfg.MODEL.WEIGHTS = "/home/naitik/projects/SGG_Continual/models/experiments/SGTR_short/playground/sgg/detr.res101.c5.multiscale.150e.bs16/log/2022-11-27_17-36-detr_vg_pre_train_imagenet_vg_short_TASK_1/model_final.pth"
-        # if task_number == 3 :
-        #     cfg.MODEL.WEIGHTS = "/home/naitik/projects/SGG_Continual/models/experiments/SGTR_short/playground/sgg/detr.res101.c5.multiscale.150e.bs16/log/2022-12-21_06-45-detr_vg_pre_train_imagenet_vg_short_ewc_TASK_3/model_final.pth"
-        
         logger.info(str(cfg.MODEL.WEIGHTS))
         trainer.resume_or_load(resume=False, load_mapping=cfg.MODEL.WEIGHTS_LOAD_MAPPING)
-            
-#         if task_number > 1 :
-#             # if task_number == 2 :
-#             #     cfg.MODEL.WEIGHTS = "/home/naitik/projects/SGG_Continual/models/experiments/SGTR_short/playground/sgg/detr.res101.c5.multiscale.150e.bs16/log/2022-11-22_13-46-detr_vg_pre_train_imagenet_vg_short_TASK_2/model_final.pth"
-#             # elif task_number == 3 :
-#             #     cfg.MODEL.WEIGHTS = "/home/naitik/projects/SGG_Continual/models/experiments/SGTR_short/playground/sgg/detr.res101.c5.multiscale.150e.bs16/log/2022-11-22_13-46-detr_vg_pre_train_imagenet_vg_short_TASK_3/model_final.pth"
-                
-#             trainer.resume_or_load(resume=False, load_mapping=cfg.MODEL.WEIGHTS_LOAD_MAPPING)
-            
-            
-            
+        
+        if args.sgg == "sgg" and task_number > 1:
+
+            #Fill the weights of the model post Stage 1 Training here
+            if args.continual == "replay_10" :
+                    if task_list[i] == "s3_task_1" :
+                        cfg.MODEL.WEIGHTS = ""
+                    elif task_list[i] == "s3_task_2" :
+                        cfg.MODEL.WEIGHTS = ""
+                    elif task_list[i] == "s3_task_3" :
+                        cfg.MODEL.WEIGHTS = ""
+                    elif task_list[i] == "s3_task_4" :
+                        cfg.MODEL.WEIGHTS = ""
+            else :
+                    if task_list[i] == "s3_task_1" :
+                        cfg.MODEL.WEIGHTS = ""
+                    elif task_list[i] == "s3_task_2" :
+                        cfg.MODEL.WEIGHTS = ""
+                    elif task_list[i] == "s3_task_3" :
+                        cfg.MODEL.WEIGHTS = ""
+                    elif task_list[i] == "s3_task_4" :
+                        cfg.MODEL.WEIGHTS = ""    
+
+        
+            logger.info(str(cfg.MODEL.WEIGHTS))
+            trainer.resume_or_load(resume=False, load_mapping=cfg.MODEL.WEIGHTS_LOAD_MAPPING)
+ 
         if args.eval_only:
             DetectionCheckpointer(
                 trainer.model, save_dir=cfg.OUTPUT_DIR, resume=args.resume).resume_or_load(
@@ -252,17 +261,10 @@ def stage_main(args, cfg, build):
         _ , global_continual_object = trainer.train()
         
         if comm.is_main_process() and cfg.MODEL.AS_PRETRAIN:
-            # convert last ckpt to pretrain format
-            if not ((continual_method == "ewc" or continual_method == "icarl")) :
                 convert_to_pretrained_model(
                     input=os.path.join(cfg.OUTPUT_DIR, "model_final.pth"),
                     save_path=os.path.join(cfg.OUTPUT_DIR, "model_final_pretrain_weight.pkl")
                 )
-            
-            
-                if args.continual != False :
-                    if continual_method == "ewc" :
-                        update_ewc_params()
             
                 cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
 
@@ -274,17 +276,6 @@ def stage_main(args, cfg, build):
         for handler in handlers:
             logger.removeHandler(handler)
             handler.close()
-        
-        if args.continual == "joint" :
-            break
-
-
-            
-
-def update_ewc_params():
-    """ This function calls the EWC modules to upadate the means and Ficher parameters """
-    
-    pass
 
 
 def convert_to_pretrained_model(input, save_path):
@@ -367,9 +358,9 @@ if __name__ == "__main__":
     from net import build_model  # noqa: E402
 
     parser = default_argument_parser()
-    parser.add_argument("--continual", choices=["infinite_replay","random_replay", "ewc", "icarl", "joint", False], required=False, default = False)
-    parser.add_argument("--start_task", choices=["2","3","4","5"], required=False, default = "1")
-
+    parser.add_argument("--continual", choices=["replay_10", False], required=False, default = False)
+    parser.add_argument("--start_task", choices=["2","3","4"], required=False, default = "1")
+    parser.add_argument("--sgg", choices=["sgg", "obj"], required=False, default = "obj")
     args = parser.parse_args()
 
     if not args.disable_gpu_check:
