@@ -50,7 +50,6 @@ There is only Stage 2 training for Learning Scenario S1. To train the model, run
 
 ```bash
 cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
-
 pods_train_S1 --num-gpus 4 --continual "random_replay"
 
 ```
@@ -68,14 +67,12 @@ To train the model, run the following in the command window:
 ```bash
 #Stage 1
 cd ~/CSEGG/playground/sgg/detr.res101.c5.multiscale.150e.bs16
-
 pods_train_S2 --num-gpus 4 --continual "random_replay"
 ```
 
 ```bash
 #Stage 2
 cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
-
 pods_train_S2 --num-gpus 4 --continual "random_replay" --sgg "sgg"
 ```
 
@@ -95,14 +92,12 @@ To train the model, run the following in the command window:
 ```bash
 #Stage 1
 cd ~/CSEGG/playground/sgg/detr.res101.c5.multiscale.150e.bs16
-
 pods_train_S3 --num-gpus 4 --continual "random_replay"
 ```
 
 ```bash
 #Stage 2
 cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
-
 pods_train_S3 --num-gpus 4 --continual "random_replay" --sgg "sgg"
 ```
 
