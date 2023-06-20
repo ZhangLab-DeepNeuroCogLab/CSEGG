@@ -35,12 +35,94 @@ Some visualization examples from all the scenarios are shown below.
 |:---:|
 | Visualization examples for Learning Scenario 3. | -->
 
+## Installation
+Check [INSTALL.md](INSTALL.md) for installation instructions.
+
 ## Dataset
 
 Check [DATASET.md](DATASET.md) for instructions of dataset preprocessing.
 
-## Installation
-Check [INSTALL.md](INSTALL.md) for installation instructions.
+## Training and Evaluation
+
+### Understanding Args 
+
+Training:
+- --num-gpus : Number of GPUs used for training. 
+- --start_task : To resume the training from certain task.
+- --sgg : To activate Stage 2 for Learning Scenario S2, S3. (This argument is not present in Learning Scenario S1).
+- --continual : To choose which CSEGG model to train.
+  - Learning Scenario S1 :- "replay_10", "ewc", "replay_100". To train "naive", exclude this argument from training command.
+  - Learning Scenario S2 :- "replay_10", "ewc", "replay_20". To train "naive", exclude this argument from training command.
+  - Learning Scenario S3 :- "replay_10". To train "naive", exclude this argument from training command.
+
+Evaluation:
+- --num-gpus : Number of GPUs used for testing.
+
+### Learning Scenario S1 
+
+There is only Stage 2 training for Learning Scenario S1. To train the model, run the following in the command window:
+
+```bash
+cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
+pods_train_S1 --num-gpus 4 --continual "replay_10"
+
+```
+To evaluate,
+
+```bash
+cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
+pods_test_S1 --num-gpus 1 
+
+```
+### Learning Scenario S2 
+
+To train the model, run the following in the command window:
+
+```bash
+#Stage 1
+cd ~/CSEGG/playground/sgg/detr.res101.c5.multiscale.150e.bs16
+pods_train_S2 --num-gpus 4 --continual "replay_10"
+```
+
+```bash
+#Stage 2
+cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
+pods_train_S2 --num-gpus 4 --continual "replay_10" --sgg "sgg"
+```
+
+To evaluate,
+
+```bash
+cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
+#Evaluation of Object Detection (Stage 1) and SGG (Stage 2) is combined
+pods_test_S2 --num-gpus 1 
+
+```
+
+### Learning Scenario S3 
+
+To train the model, run the following in the command window:
+
+```bash
+#Stage 1
+cd ~/CSEGG/playground/sgg/detr.res101.c5.multiscale.150e.bs16
+pods_train_S3 --num-gpus 4 --continual "replay_10"
+```
+
+```bash
+#Stage 2
+cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
+pods_train_S3 --num-gpus 4 --continual "replay_10" --sgg "sgg"
+```
+
+To evaluate,
+
+```bash
+#evaluation of R_bbox and R@k_relation_gen
+cd ~/CSEGG/playground/sgg/detr.res101.c5.one_stage_rel_tfmer
+pods_test_S3 --num-gpus 1 
+
+```
 
 ## Acknowledgment
 This repository borrows code from scene graph benchmarking frameworks: [Scene Graph Benchmark](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch) developed by KaihuaTang, [PySGG](https://github.com/SHTUPLUS/PySGG) and [SGTR](https://github.com/Scarecrow0/SGTR/tree/main) developed by Rongjie Li.
