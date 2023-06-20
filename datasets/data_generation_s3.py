@@ -276,7 +276,7 @@ def s3(filename, split, test_combined, exemp = False):
 
     split_copy = data_split.copy()
 
-    split_flag = 0
+    split_flag = 2 if split == "test" else 0
 
     split_mask = data_split == split_flag
 
