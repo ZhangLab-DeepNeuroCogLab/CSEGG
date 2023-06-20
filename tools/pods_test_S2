@@ -2,4 +2,4 @@
 
 export OMP_NUM_THREADS=1
 
-python3 /home/naitik2/projects/SGG_Continual/models/experiments/c2/tools/test_net_s2.py $@
+python3 /home/naitik2/CSEGG/tools/test_net_s2.py $@

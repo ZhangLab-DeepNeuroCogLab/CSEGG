@@ -305,7 +305,7 @@ def s2(filename, split, test_combined, exemp = False):
     elif exemp == 20 :
         np.random.seed(0)
         np.random.shuffle(image_index)
-        image_index = image_index[:int(len(image_index)*0.1)]
+        image_index = image_index[:int(len(image_index)*0.2)]
 
 
     split_mask[image_index] = True
@@ -438,15 +438,15 @@ def create_directory_structure_s2(root_path):
         os.makedirs("s2_data/s2_task_1_exemp_10")
         os.makedirs("s2_data/s2_task_1_exemp_20")
 
-        target_path = os.path.join(root_path[:-3], "s2_data/s2_task_1/")
+        target_path = os.path.join(root_path[:-17], "s2_data/s2_task_1/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s2_data/s2_task_1_exemp_10/")
+        target_path = os.path.join(root_path[:-17], "s2_data/s2_task_1_exemp_10/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s2_data/s2_task_1_exemp_20/")
+        target_path = os.path.join(root_path[:-17], "s2_data/s2_task_1_exemp_20/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
@@ -454,15 +454,15 @@ def create_directory_structure_s2(root_path):
         os.makedirs("s2_data/s2_task_2")
         os.makedirs("s2_data/s2_task_2_exemp_10")
         os.makedirs("s2_data/s2_task_2_exemp_20")
-        target_path = os.path.join(root_path[:-3], "s2_data/s2_task_2/")
+        target_path = os.path.join(root_path[:-17], "s2_data/s2_task_2/")
         shutil.copyfile(image_data_path, target_path + "image_data.json")
         shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s2_data/s2_task_2_exemp_10/")
+        target_path = os.path.join(root_path[:-17], "s2_data/s2_task_2_exemp_10/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s2_data/s2_task_2_exemp_20/")
+        target_path = os.path.join(root_path[:-17], "s2_data/s2_task_2_exemp_20/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
         

@@ -121,11 +121,23 @@ def get_model_zoo_configs() -> List[str]:
 def build_cvpods_script():
     cur_dir = os.getcwd()
     head = "#!/bin/bash\n\nexport OMP_NUM_THREADS=1\n\n"
-    with open("tools/pods_train", "w") as pods_train:
-        pods_train.write(head + f"python3 {os.path.join(cur_dir, 'tools', 'train_net.py')} $@")
+    with open("tools/pods_train_S1", "w") as pods_train:
+        pods_train.write(head + f"python3 {os.path.join(cur_dir, 'tools', 'train_net_s1.py')} $@")
 
-    with open("tools/pods_test", "w") as pods_test:
-        pods_test.write(head + f"python3 {os.path.join(cur_dir, 'tools', 'test_net.py')} $@")
+    with open("tools/pods_train_S2", "w") as pods_train:
+        pods_train.write(head + f"python3 {os.path.join(cur_dir, 'tools', 'train_net_s2.py')} $@")
+    
+    with open("tools/pods_train_S3", "w") as pods_train:
+        pods_train.write(head + f"python3 {os.path.join(cur_dir, 'tools', 'train_net_s3.py')} $@")
+
+    with open("tools/pods_test_S1", "w") as pods_test:
+        pods_test.write(head + f"python3 {os.path.join(cur_dir, 'tools', 'test_net_s1.py')} $@")
+    
+    with open("tools/pods_test_S2", "w") as pods_test:
+        pods_test.write(head + f"python3 {os.path.join(cur_dir, 'tools', 'test_net_s2.py')} $@")
+
+    with open("tools/pods_test_S3", "w") as pods_test:
+        pods_test.write(head + f"python3 {os.path.join(cur_dir, 'tools', 'test_net_s3.py')} $@")
 
     with open("tools/pods_debug", "w") as pods_debug:
         pods_debug.write(head + f"python3 {os.path.join(cur_dir, 'tools', 'debug_net.py')} $@")
@@ -144,8 +156,12 @@ if __name__ == "__main__":
         ext_modules=get_extensions(),
         cmdclass={"build_ext": torch.utils.cpp_extension.BuildExtension},
         scripts=[
-            "tools/pods_train",
-            "tools/pods_test",
+            "tools/pods_train_S1",
+            "tools/pods_train_S2",
+            "tools/pods_train_S3",
+            "tools/pods_test_S1",
+            "tools/pods_test_S2",
+            "tools/pods_test_S3",
             "tools/pods_debug",
         ],
     )

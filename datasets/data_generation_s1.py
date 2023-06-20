@@ -417,15 +417,15 @@ def create_directory_structure_s1(root_path):
         os.makedirs("s1_data/s1_task_1_exemp_10")
         os.makedirs("s1_data/s1_task_1_exemp_100")
 
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_1/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_1/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_1_exemp_10/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_1_exemp_10/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_1_exemp_100/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_1_exemp_100/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
@@ -433,15 +433,15 @@ def create_directory_structure_s1(root_path):
         os.makedirs("s1_data/s1_task_2")
         os.makedirs("s1_data/s1_task_2_exemp_10")
         os.makedirs("s1_data/s1_task_2_exemp_100")
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_2/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_2/")
         shutil.copyfile(image_data_path, target_path + "image_data.json")
         shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_2_exemp_10/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_2_exemp_10/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_2_exemp_100/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_2_exemp_100/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
         
@@ -450,15 +450,15 @@ def create_directory_structure_s1(root_path):
         os.makedirs("s1_data/s1_task_3_exemp_10")
         os.makedirs("s1_data/s1_task_3_exemp_100")
 
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_3/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_3/")
         shutil.copy(image_data_path, target_path + "image_data.json")
         shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_3_exemp_10/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_3_exemp_10/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_3_exemp_100/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_3_exemp_100/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
@@ -466,15 +466,15 @@ def create_directory_structure_s1(root_path):
         os.makedirs("s1_data/s1_task_4")
         os.makedirs("s1_data/s1_task_4_exemp_10")
         os.makedirs("s1_data/s1_task_4_exemp_100")
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_4/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_4/")
         shutil.copy(image_data_path, target_path + "image_data.json")
         shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_4_exemp_10/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_4_exemp_10/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_4_exemp_100/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_4_exemp_100/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
@@ -482,15 +482,15 @@ def create_directory_structure_s1(root_path):
         os.makedirs("s1_data/s1_task_5")
         os.makedirs("s1_data/s1_task_5_exemp_10")
         os.makedirs("s1_data/s1_task_5_exemp_100")
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_5/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_5/")
         shutil.copy(image_data_path, target_path + "image_data.json")
         shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_5_exemp_10/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_5_exemp_10/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s1_data/s1_task_5_exemp_100/")
+        target_path = os.path.join(root_path[:-17], "s1_data/s1_task_5_exemp_100/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
     

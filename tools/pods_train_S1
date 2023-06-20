@@ -2,4 +2,4 @@
 
 export OMP_NUM_THREADS=1
 
-python3 /home/naitik2/projects/SGG_Continual/models/experiments/c2/tools/train_net_s1.py $@
+python3 /home/naitik2/CSEGG/tools/train_net_s1.py $@

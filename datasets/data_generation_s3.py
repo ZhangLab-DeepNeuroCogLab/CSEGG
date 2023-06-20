@@ -426,11 +426,11 @@ def create_directory_structure_s3(root_path):
         os.makedirs("s3_data/s3_task_1_exemp_10")
         
 
-        target_path = os.path.join(root_path[:-3], "s3_data/s3_task_1/")
+        target_path = os.path.join(root_path[:-17], "s3_data/s3_task_1/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s3_data/s3_task_1_exemp_10/")
+        target_path = os.path.join(root_path[:-17], "s3_data/s3_task_1_exemp_10/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
@@ -440,11 +440,11 @@ def create_directory_structure_s3(root_path):
         os.makedirs("s3_data/s3_task_2")
         os.makedirs("s3_data/s3_task_2_exemp_10")
         
-        target_path = os.path.join(root_path[:-3], "s3_data/s3_task_2/")
+        target_path = os.path.join(root_path[:-17], "s3_data/s3_task_2/")
         shutil.copyfile(image_data_path, target_path + "image_data.json")
         shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s3_data/s3_task_2_exemp_10/")
+        target_path = os.path.join(root_path[:-17], "s3_data/s3_task_2_exemp_10/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
@@ -452,11 +452,11 @@ def create_directory_structure_s3(root_path):
         os.makedirs("s3_data/s3_task_3")
         os.makedirs("s3_data/s3_task_3_exemp_10")
         
-        target_path = os.path.join(root_path[:-3], "s3_data/s3_task_3/")
+        target_path = os.path.join(root_path[:-17], "s3_data/s3_task_3/")
         shutil.copyfile(image_data_path, target_path + "image_data.json")
         shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s3_data/s3_task_3_exemp_10/")
+        target_path = os.path.join(root_path[:-17], "s3_data/s3_task_3_exemp_10/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
@@ -464,11 +464,11 @@ def create_directory_structure_s3(root_path):
         os.makedirs("s3_data/s3_task_4")
         os.makedirs("s3_data/s3_task_4_exemp_10")
         
-        target_path = os.path.join(root_path[:-3], "s3_data/s3_task_4/")
+        target_path = os.path.join(root_path[:-17], "s3_data/s3_task_4/")
         shutil.copyfile(image_data_path, target_path + "image_data.json")
         shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
-        target_path = os.path.join(root_path[:-3], "s3_data/s3_task_4_exemp_10/")
+        target_path = os.path.join(root_path[:-17], "s3_data/s3_task_4_exemp_10/")
         dest = shutil.copyfile(image_data_path, target_path + "image_data.json")
         dest = shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
     
@@ -476,7 +476,7 @@ def create_directory_structure_s3(root_path):
         os.makedirs("s3_data/s3_test")
         
         
-        target_path = os.path.join(root_path[:-3], "s3_data/s3_test/")
+        target_path = os.path.join(root_path[:-17], "s3_data/s3_test/")
         shutil.copyfile(image_data_path, target_path + "image_data.json")
         shutil.copy(dict_attri_path, target_path + "VG-SGG-dicts-with-attri.json")
 
