@@ -57,13 +57,13 @@ def divide_dataset_task(task_number, class_allowed, dataset_original, relation_c
     
     dataset_final = {"boxes" : [], "relationships"  : [], "gt_classes" : [], "gt_attributes" : [], "split_mask" : []}
     
-    print(dataset_original.keys())
+    #print(dataset_original.keys())
     
     index = 0
     
     split_mask_final = []
     
-    print(class_allowed)
+    #print(class_allowed)
     
     for i in range(len(dataset_original["split_mask"])):
         
@@ -490,19 +490,21 @@ def create_directory_structure_s3(root_path):
 def main(args):
 
     create_directory_structure_s3(args.file_path)
-    # print("Directory Structure Created!!!")
-    # s3(args.file_path, split="train", test_combined=False, exemp=False)
+    print("Directory Structure Created!!!")
+    print("\n")
+
+    print("Creating Train Dataset")
+    s3(args.file_path, split="train", test_combined=False, exemp=False)
+    print("\n")
     
+    print("Creating Test Dataset")
     s3(args.file_path, split="test", test_combined=False, exemp=False)
+    print("\n")
     
-    
-    # print("Creating Replay Buffer 10%")
-    # s3(args.file_path, split="train", test_combined=False, exemp=10)
-    
-
+    print("Creating Replay Buffer 10%")
+    s3(args.file_path, split="train", test_combined=False, exemp=10)
     
 
-    
 
 #write a main function in python
 

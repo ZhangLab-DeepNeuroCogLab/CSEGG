@@ -45,7 +45,7 @@ def divide_dataset_task(task_number, class_allowed, dataset_original):
     
     index = 0
 
-    print(class_allowed)
+    # print(class_allowed)
     
     split_mask_final = []
 
@@ -365,7 +365,7 @@ def s1(filename, split, test_combined, exemp = False):
         task_distribution[4] = task_distribution[4] + task_distribution[3]
         task_distribution[5] = task_distribution[5] + task_distribution[4]
     
-    print("Task distribution: ", task_distribution)
+    # print("Task distribution: ", task_distribution)
      
     divided_dataset_dict = divide_dataset(task_distribution,dataset_dicts)
 
@@ -498,13 +498,24 @@ def main(args):
 
     create_directory_structure_s1(args.file_path)
     print("Directory Structure Created!!!")
+    print("\n")
+
+    print("Creating Train Dataset")
     s1(args.file_path, split="train", test_combined=False, exemp=False)
+    print("\n")
+
+    print("Creating Test Dataset")
     s1(args.file_path, split="test", test_combined=False, exemp=False)
     s1(args.file_path, split="test", test_combined=True, exemp=False)
+    print("\n")
+
     print("Creating Replay Buffer 10%")
     s1(args.file_path, split="train", test_combined=False, exemp=10)
+    print("\n")
+
     print("Creating Replay Buffer 100%")
     s1(args.file_path, split="train", test_combined=False, exemp=100)
+    print("\n")
 
     
 

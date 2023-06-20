@@ -57,13 +57,13 @@ def divide_dataset_task(task_number, class_allowed, dataset_original, task_distr
     
     dataset_final = {"boxes" : [], "relationships"  : [], "gt_classes" : [], "gt_attributes" : [], "split_mask" : []}
     
-    print(dataset_original.keys())
+    # print(dataset_original.keys())
     
     index = 0
     
     split_mask_final = []
     
-    print(class_allowed)
+    # print(class_allowed)
     
     for i in range(len(dataset_original["split_mask"])):
         
@@ -474,11 +474,21 @@ def main(args):
 
     create_directory_structure_s2(args.file_path)
     print("Directory Structure Created!!!")
+    print("\n")
+
+    print("Creating Train Dataset!!!")
     s2(args.file_path, split="train", test_combined=False, exemp=False)
+    print("\n")
+
+    print("Creating Test Dataset!!!")
     s2(args.file_path, split="test", test_combined=False, exemp=False)
     s2(args.file_path, split="test", test_combined=True, exemp=False)
+    print("\n")
+
     print("Creating Replay Buffer 10%")
     s2(args.file_path, split="train", test_combined=False, exemp=10)
+    print("\n")
+    
     print("Creating Replay Buffer 20%")
     s2(args.file_path, split="train", test_combined=False, exemp=20)
 
