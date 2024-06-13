@@ -42,6 +42,12 @@ Check [INSTALL.md](INSTALL.md) for installation instructions.
 
 Check [DATASET.md](DATASET.md) for instructions of dataset preprocessing.
 
+## Now look at HOW_T0_USE.md for knowing various commands to run the train and eval scripts (especially if you are using multiple gpus)
+
+Check [HOW_T0_USE.md](HOW_T0_USE.md) for the instructions
+
+After running the evaluation code, you can load the "Final_Results.csv" in the jupyter notebook "results_figure.ipynb"
+
 ## Training and Evaluation
 
 ### Understanding Args 
@@ -51,9 +57,10 @@ Training:
 - --start_task : To resume the training from certain task.
 - --sgg : To activate Stage 2 for Learning Scenario S2, S3. (This argument is not present in Learning Scenario S1).
 - --continual : To choose which CSEGG model to train.
-  - Learning Scenario S1 :- "replay_10", "ewc", "replay_100". To train "naive", exclude this argument from training command.
-  - Learning Scenario S2 :- "replay_10", "ewc", "replay_20". To train "naive", exclude this argument from training command.
-  - Learning Scenario S3 :- "replay_10". To train "naive", exclude this argument from training command.
+  - Learning Scenario S1 :- "replay_10", "ewc", "replay_100", "packnet", "ras" (Our new model. See RAS.md for details and ras folder for the code.
+  .) To train "naive", exclude this argument from training command.
+  - Learning Scenario S2 :- "replay_10", "ewc", "replay_20", "packnet", "ras". To train "naive", exclude this argument from training command.
+  - Learning Scenario S3 :- "replay_10", "ras". To train "naive", exclude this argument from training command.
 
 Evaluation:
 - --num-gpus : Number of GPUs used for testing.
@@ -126,6 +133,10 @@ pods_test_S3 --num-gpus 1
 
 ## Acknowledgment
 This repository borrows code from scene graph benchmarking frameworks: [Scene Graph Benchmark](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch) developed by KaihuaTang, [PySGG](https://github.com/SHTUPLUS/PySGG) and [SGTR](https://github.com/Scarecrow0/SGTR/tree/main) developed by Rongjie Li.
+
+# Q&A
+
+- Import ipdb in anywhere in your code will cause the multi-process initialization error, try pdb when you debug in multi-process mode.
 
 
 
