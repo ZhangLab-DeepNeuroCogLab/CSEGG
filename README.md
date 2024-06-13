@@ -44,7 +44,7 @@ Check [DATASET.md](DATASET.md) for instructions of dataset preprocessing.
 
 ## Now look at HOW_T0_USE.md for knowing various commands to run the train and eval scripts (especially if you are using multiple gpus)
 
-Check [HOW_T0_USE.md](HOW_T0_USE.md) for the instructions
+Check [HOW_T0_USE.md](HOW_TO_USE.md) for the instructions
 
 After running the evaluation code, you can load the "Final_Results.csv" in the jupyter notebook "results_figure.ipynb"
 
