@@ -4,6 +4,8 @@
 [![Python](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/pytorch-1.10.0-%237732a8)](https://pytorch.org/get-started/previous-versions/)
 
+Link to our paper :- https://arxiv.org/pdf/2310.01636
+
 Authors: Naitik Khandelwal, Xiao Liu, Mengmi Zhang
 
 This repository houses our CSEGG benchmark implementation, encompassing source code for experimenting with Transformer-based SGG methods across various continual learning algorithms in all proposed learning scenarios outlined in our paper. Additionally, it includes the code for data generation in all the scenarios presented in the paper.
